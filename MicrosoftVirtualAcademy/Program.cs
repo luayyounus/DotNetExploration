@@ -83,4 +83,31 @@ namespace MicrosoftVirtualAcademy
             Console.ReadLine();
         }
     }
+
+    internal class Arrays
+    {
+        private static void Main(string[] args)
+        {
+            MakeArrays();
+            Console.ReadLine();
+        }
+
+        private static void MakeArrays()
+        {
+            int[] numbers = new int[] { 2, 532, 3, 22, 451, 43, 593, 29 };
+            string[] names = new string[] { "Luay", "Tam", "Shayne" };
+
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
+            }
+            Console.ReadLine();
+
+            string phrase = "Welcome to my app, I am just killing time by watching this series. I skipped 99% of it since I am an advanced programmer. meh";
+            char[] charPhrase = phrase.ToCharArray();
+            Array.Reverse(charPhrase);
+
+            Console.WriteLine(charPhrase);
+        }
+    }
 }
