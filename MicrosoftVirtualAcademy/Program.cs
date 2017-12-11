@@ -64,4 +64,23 @@ namespace MicrosoftVirtualAcademy
             Console.ReadLine();
         }
     }
+
+    internal class ForIteration
+    {
+        private static void Main(string[] args)
+        {
+            ForLoop();
+        }
+
+        private static void ForLoop()
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                if (i != 7) continue;
+                Console.WriteLine("Found Seven!");
+                break;
+            }
+            Console.ReadLine();
+        }
+    }
 }
