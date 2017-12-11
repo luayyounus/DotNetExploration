@@ -124,10 +124,7 @@ namespace MicrosoftVirtualAcademy
                 Console.Write("What's your last name? ");
                 string lastName = Console.ReadLine();
 
-                string firstNameReversed = ReverseString(firstName);
-                string lastNameReversed = ReverseString(lastName);
-                Console.WriteLine("The name reversed: {1}{0}", firstNameReversed, lastNameReversed);
-                Console.ReadLine();
+                DisplayResult(ReverseString(firstName), ReverseString(lastName));
             }
 
             private static string ReverseString(string message)
@@ -135,6 +132,12 @@ namespace MicrosoftVirtualAcademy
                 char[] messageArray = message.ToCharArray();
                 Array.Reverse(messageArray);
                 return String.Concat(messageArray);
+            }
+
+            private static void DisplayResult(string name1, string name2)
+            {
+                Console.WriteLine("The name reversed: {1} {0}", name1, name2);
+                Console.ReadLine();
             }
         }
     }
