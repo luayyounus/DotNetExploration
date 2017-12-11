@@ -112,5 +112,29 @@ namespace MicrosoftVirtualAcademy
                 Console.WriteLine(charPhrase);
             }
         }
+
+        internal class DefiningCallingMethods
+        {
+            private static void Main(string[] args)
+            {
+                Console.WriteLine("The Name Game");
+                Console.Write("What's your First Name? ");
+                string firstName = Console.ReadLine();
+
+                Console.Write("What's your last name? ");
+                string lastName = Console.ReadLine();
+
+                string firstNameReversed = ReverseString(firstName);
+                string lastNameReversed = ReverseString(lastName);
+                Console.WriteLine("The name reversed: {1}{0}", firstNameReversed, lastNameReversed);
+            }
+
+            private static string ReverseString(string message)
+            {
+                char[] messageArray = message.ToCharArray();
+                Array.Reverse(messageArray);
+                return String.Concat(messageArray);
+            }
+        }
     }
 }
