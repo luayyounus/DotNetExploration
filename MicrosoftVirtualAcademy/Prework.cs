@@ -127,6 +127,7 @@ namespace MicrosoftVirtualAcademy
                 string firstNameReversed = ReverseString(firstName);
                 string lastNameReversed = ReverseString(lastName);
                 Console.WriteLine("The name reversed: {1}{0}", firstNameReversed, lastNameReversed);
+                Console.ReadLine();
             }
 
             private static string ReverseString(string message)
