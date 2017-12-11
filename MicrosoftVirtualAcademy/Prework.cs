@@ -221,5 +221,48 @@ namespace MicrosoftVirtualAcademy
                 Console.ReadLine();
             }
         }
+
+        internal class Strings
+        {
+            private static void Main(string[] args)
+            {
+                string doubleQuotes = "My \"so-called\" Life";
+                string newLine = "new line \n";
+                string tab = "this is a tab \t hmmm";
+                string backSlash = "Go to c:\\ drive";
+                string anotherWayForBackSlash = @"Go to c:\ drive";
+
+                string stringFormat = String.Format("{0} {0} {1} {1} {1} {0}", "Lol", "Meh");
+                string currency = String.Format("{0:C}", 2938.43);
+                string longNumber = String.Format("{0:G}", 23784981);
+                string percentage = String.Format("Percentage: {0:P}", .123);
+
+                string phoneNumber = String.Format("Phone Number: {0:(###)-###-####}", 6076076070);
+                string lyrics = "  Whenever wherever, hell yeah we are meant to be together ... la la la   ";
+                string subString = lyrics.Substring(23); //Starts at the position 23 to the end of string
+                string subString2 = lyrics.Substring(0, 4);
+                string toUpperCase = lyrics.ToUpper();
+                string replace = lyrics.Replace(" ", "--");
+                string remove = lyrics.Remove(0, 40); //from index to index
+
+                string trim = lyrics.Trim(); //remove leading and trailing spaces
+                string trimStart = lyrics.TrimStart(); //Just the leading spaces
+
+                string demoLengthWithTrim =
+                    String.Format("Length before: {0} - Length After: {1}", 
+                    lyrics.Length, trim.Length);
+
+                StringBuilder myStringBuilder = new StringBuilder();
+
+                for (int i = 0; i < 100; i++)
+                {
+                    myStringBuilder.Append("--");
+                    myStringBuilder.Append(i);
+                }
+
+                Console.WriteLine(longNumber);
+                Console.ReadLine();
+            }
+        }
     }
 }
