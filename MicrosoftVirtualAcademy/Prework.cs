@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MicrosoftVirtualAcademy
 {
-    internal class Prework
+    public static class Prework
     {
         internal class Variables
         {
@@ -309,7 +309,7 @@ namespace MicrosoftVirtualAcademy
             {
                 AutoImplementedProps autoImplementedProps = new AutoImplementedProps();
                 autoImplementedProps.PlayerNumber = 3;
-                autoImplementedProps.FieldName = "ksdfjg"; // Problem setting the FieldNAme - Must use a constructor or factory method
+                //autoImplementedProps.FieldName = "ksdfjg"; // Problem setting the FieldNAme - Must use a constructor or factory method
             }
         }
     }
