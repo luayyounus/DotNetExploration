@@ -281,5 +281,36 @@ namespace MicrosoftVirtualAcademy
             
         }
 
+        internal class AutoImplementedProps
+        {
+            public int PlayerNumber { get; set; }
+            public string FieldName { get; private set; }
+
+            public AutoImplementedProps()
+            {
+            }
+
+            public AutoImplementedProps(int playerNum, string fieldName)
+            {
+                PlayerNumber = playerNum;
+                FieldName = fieldName;
+            }
+        }
+
+        internal class MainForAutoImpProps
+        {
+            //initializing props through the constructor
+            private static void Main()
+            {
+                AutoImplementedProps autoImplementedProps = new AutoImplementedProps(3, "Hello"); // No problem setting the FieldName
+            }
+            //initializing the class directly
+            private static void Main2()
+            {
+                AutoImplementedProps autoImplementedProps = new AutoImplementedProps();
+                autoImplementedProps.PlayerNumber = 3;
+                autoImplementedProps.FieldName = "ksdfjg"; // Problem setting the FieldNAme - Must use a constructor or factory method
+            }
+        }
     }
 }
