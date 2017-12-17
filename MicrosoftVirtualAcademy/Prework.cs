@@ -312,5 +312,25 @@ namespace MicrosoftVirtualAcademy
                 //autoImplementedProps.FieldName = "ksdfjg"; // Problem setting the FieldNAme - Must use a constructor or factory method
             }
         }
+
+        internal class Dynamic
+        {
+            private static void Main()
+            {
+                dynamic dyn = 1;
+                object obj = 1;
+
+                //GetType here is getting the runtime type of both dyn and obj
+                Console.WriteLine(dyn.GetType());
+                Console.WriteLine(obj.GetType());
+
+                dynamic strTest = 's';
+                object objTest = "Hello";
+
+                Console.WriteLine(strTest.GetType());
+                Console.WriteLine(objTest.GetType());
+                Console.ReadLine();
+            }
+        }
     }
 }
