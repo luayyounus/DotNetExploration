@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -264,5 +266,20 @@ namespace MicrosoftVirtualAcademy
                 Console.ReadLine();
             }
         }
+
+        internal class OutVariables
+        {
+            public void GetValue(out int x)
+            {
+                x = 3;
+            }
+            public int GetValue()
+            {
+                var input = int.Parse(Console.ReadLine() ?? throw new ArgumentNullException());
+                return input;
+            }
+            
+        }
+
     }
 }
