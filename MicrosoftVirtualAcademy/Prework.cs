@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MicrosoftVirtualAcademy
 {
-    internal class Prework
+    public static class Prework
     {
         internal class Variables
         {
@@ -262,6 +264,96 @@ namespace MicrosoftVirtualAcademy
 
                 Console.WriteLine(longNumber);
                 Console.ReadLine();
+            }
+        }
+
+        internal class OutVariables
+        {
+            public void GetValue(out int x)
+            {
+                x = 3;
+            }
+            public int GetValue()
+            {
+                var input = int.Parse(Console.ReadLine() ?? throw new ArgumentNullException());
+                return input;
+            }
+            
+        }
+
+        internal class AutoImplementedProps
+        {
+            public int PlayerNumber { get; set; }
+            public string FieldName { get; private set; }
+
+            public AutoImplementedProps()
+            {
+            }
+
+            public AutoImplementedProps(int playerNum, string fieldName)
+            {
+                PlayerNumber = playerNum;
+                FieldName = fieldName;
+            }
+        }
+
+        internal class MainForAutoImpProps
+        {
+            //initializing props through the constructor
+            private static void Main()
+            {
+                AutoImplementedProps autoImplementedProps = new AutoImplementedProps(3, "Hello"); // No problem setting the FieldName
+            }
+            //initializing the class directly
+            private static void Main2()
+            {
+                AutoImplementedProps autoImplementedProps = new AutoImplementedProps();
+                autoImplementedProps.PlayerNumber = 3;
+                //autoImplementedProps.FieldName = "ksdfjg"; // Problem setting the FieldNAme - Must use a constructor or factory method
+            }
+        }
+
+        internal class Dynamic
+        {
+            private static void Main()
+            {
+                dynamic dyn = 1;
+                object obj = 1;
+
+                //GetType here is getting the runtime type of both dyn and obj
+                Console.WriteLine(dyn.GetType());
+                Console.WriteLine(obj.GetType());
+
+                dynamic strTest = 's';
+                object objTest = "Hello";
+
+                Console.WriteLine(strTest.GetType());
+                Console.WriteLine(objTest.GetType());
+                Console.ReadLine();
+            }
+        }
+
+        internal class Tuples
+        {
+            private static void Main()
+            {
+                var tuple = new Tuple<string, string[], int, int[]>
+                    ("perl", new string[] {"java", "C#"}, 1, new int[] {2, 3});
+                testTuple(tuple);
+            }
+
+            public static void testTuple(Tuple<string, string[], int, int[]> tuple)
+            {
+                Console.WriteLine(tuple.Item1);
+                foreach (string name in tuple.Item2)
+                {
+                    Console.WriteLine(name);
+                }
+                Console.WriteLine(tuple.Item3);
+                foreach (int num in tuple.Item4)
+                {
+                    Console.WriteLine(num);
+                }
             }
         }
     }
