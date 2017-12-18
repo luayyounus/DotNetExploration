@@ -332,5 +332,29 @@ namespace MicrosoftVirtualAcademy
                 Console.ReadLine();
             }
         }
+
+        internal class Tuples
+        {
+            private static void Main()
+            {
+                var tuple = new Tuple<string, string[], int, int[]>
+                    ("perl", new string[] {"java", "C#"}, 1, new int[] {2, 3});
+                testTuple(tuple);
+            }
+
+            public static void testTuple(Tuple<string, string[], int, int[]> tuple)
+            {
+                Console.WriteLine(tuple.Item1);
+                foreach (string name in tuple.Item2)
+                {
+                    Console.WriteLine(name);
+                }
+                Console.WriteLine(tuple.Item3);
+                foreach (int num in tuple.Item4)
+                {
+                    Console.WriteLine(num);
+                }
+            }
+        }
     }
 }
