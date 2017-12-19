@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using Console = System.Console;
 
 namespace MicrosoftVirtualAcademy
 {
@@ -354,6 +355,43 @@ namespace MicrosoftVirtualAcademy
                 {
                     Console.WriteLine(num);
                 }
+            }
+        }
+
+        internal class TryCatchStatements
+        {
+            public static void Main()
+            {
+                TryCatchStatement();
+            }
+            static void TryCatchStatement()
+            {
+                int num = 13, denom = 0, result;
+
+                int[] myArray = {22, 33, 55};
+
+                try
+                {
+                    result = num / denom; // this is the first thing to break the app and will throw (DivideByZero)
+                    result = myArray[num]; //since the first one is broken this won't be reached nor its exception
+
+                }
+                catch (DivideByZeroException error)
+                {
+                    //you can set a break point on this line to see the error description after being initialized
+                    Console.WriteLine("We are in the first catch block");
+                    Console.WriteLine(error.Message);
+                }
+                catch (IndexOutOfRangeException error)
+                {
+                    Console.WriteLine("We are in the second catch block");
+                    Console.WriteLine(error.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("Last thing to do once the app is broken"); //avoid memory leak - close connections and others
+                }
+                Console.Read();
             }
         }
     }
